@@ -296,20 +296,7 @@ export default function About() {
         </div>
       </section> */}
 
-      {/* STATS */}
-      <section className="py-20 bg-offwhite">
-        <div className="container-x">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[30px]">
-            <Counter label="Rooms" value={8} desc="Boutique by design" delay="0s" />
-            <Counter label="Guest Rating" value={88} suffix="/100" desc="Across booking sites" delay="0.1s" />
-            <Counter label="To Triveni Sangama" value={100} suffix="m" desc="A short walk" delay="0.2s" />
-            <Counter label="To Madikeri" value={35} suffix="km" desc="Hill-town heritage" delay="0.3s" />
-            <Counter label="Reception" value={24} suffix="/7" desc="Always available" delay="0.4s" />
-          </div>
-        </div>
-      </section>
-
-      <ParallaxCTA
+       <ParallaxCTA
         bgImage="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&q=80"
         subtitle="Reserve your stay"
         title="Come slow down in the hills."
