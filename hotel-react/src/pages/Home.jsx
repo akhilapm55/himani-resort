@@ -11,10 +11,11 @@ import HoverCard from '../components/HoverCard.jsx';
 import TestimonialSlider from '../components/TestimonialSlider.jsx';
 import { useVideoModal } from '../context/VideoModalContext.jsx';
 import {
+  brand,
   rooms,
   testimonials,
-  blogPosts,
   homeAmenities,
+  experiences,
 } from '../data/content.js';
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
           <div className="reveal text-center max-w-[700px] mx-auto mb-[60px]">
             <Subtitle>Resort Amenities</Subtitle>
             <h2>Small details, generous comfort</h2>
-            <p>Eight rooms, attentive service, and the quiet luxuries that make a hill retreat feel like home.</p>
+            <p>Nine private houses, attentive service, and the quiet luxuries that make a mountain retreat feel like home.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
@@ -101,11 +102,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-[60px] items-center">
             <div className="reveal-left">
               <h2 className="font-heading font-extrabold leading-[1.05] text-white m-0 mb-7 text-[clamp(2.4rem,6vw,5rem)] tracking-[-1.5px]">
-                Comfortable beds,<br />restful nights.{' '}
-                <span className="text-white/30 whitespace-nowrap">8 rooms</span>
+                Private houses,<br />restful nights.{' '}
+                <span className="text-white/30 whitespace-nowrap">9 houses</span>
               </h2>
               <p className="max-w-[820px] text-base leading-[1.8] text-white/90 m-0">
-                Our rooms are designed for unhurried mornings and easy nights — large beds dressed in fresh linens, generous bathrooms, and a window opening to the garden or the hills of Coorg.
+                Nine ground-floor houses — from cosy one-bedroom stays to a three-bedroom family villa — each with its own sit-out, mountain views, and the kind of silence you only find far from the city.
               </p>
             </div>
             <Link
@@ -147,28 +148,30 @@ export default function Home() {
                 We love to be hospitable.
               </h2>
               <p className="max-w-[460px] text-base leading-[1.85] text-body m-0 mb-11">
-                From plantation walks at sunrise to airport transfers and quiet evenings by the bonfire — we look after every detail of your stay so you can simply relax into the rhythm of Coorg.
+                A swimming pool with a natural backdrop, breakfast each morning, secure parking, and a 24-hour front desk — everything taken care of so you can simply switch off and breathe.
               </p>
-              <Link
-                to="/contact"
+              <a
+                href={brand.whatsapp}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full bg-accent text-white text-[13px] font-bold tracking-[3px] uppercase no-underline shadow-[0_12px_30px_rgba(62,90,53,0.25)] transition-all duration-[400ms] hover:scale-[1.08] hover:shadow-[0_18px_45px_rgba(62,90,53,0.35)]"
               >
-                More
-              </Link>
+                Book
+              </a>
             </div>
 
             <div className="reveal-right grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-x-10 lg:gap-y-[50px]">
-              <AmenityCallout icon="fas fa-leaf" title="Plantation Walks">
-                Guided morning walks through working coffee, cardamom, and pepper estates surrounding the resort.
+              <AmenityCallout icon="fas fa-person-swimming" title="Swimming Pool">
+                An open-air outdoor pool set against a gorgeous natural backdrop — relax and unwind with the mountains all around you.
               </AmenityCallout>
-              <AmenityCallout icon="fas fa-utensils" title="Coorgi Cuisine">
-                Hearty home-style cooking — Pandi curry, akki roti, and fresh local produce — served all day in our dining room.
+              <AmenityCallout icon="fas fa-mug-hot" title="Breakfast Included">
+                A complimentary breakfast comes with every package, served 8:00 – 10:00 AM, with room service and on-site dining for other meals.
               </AmenityCallout>
-              <AmenityCallout icon="fas fa-wifi" title="Wi-Fi & Quiet Corners">
-                High-speed internet throughout the resort and quiet reading corners by the garden — for those who like to mix work with rest.
+              <AmenityCallout icon="fas fa-bell-concierge" title="24-Hour Front Desk">
+                Round-the-clock reception and room service to help with anything you need during your stay or travels around Coorg.
               </AmenityCallout>
-              <AmenityCallout icon="fas fa-plane" title="Airport Transfer">
-                Private cab arrangements from Kannur International Airport (106&nbsp;km) — let our front desk know in advance.
+              <AmenityCallout icon="fas fa-square-parking" title="Free Private Parking">
+                Secure, complimentary parking right on the property — drive straight in and our team will help with your luggage.
               </AmenityCallout>
             </div>
           </div>
@@ -191,29 +194,20 @@ export default function Home() {
               </h2>
 
               <p className="max-w-[520px] text-[15px] leading-[1.85] text-body font-light m-0">
-                From <strong className="font-semibold text-primary">sunrise yoga</strong> to a fresh-roasted cup of <strong className="font-semibold text-primary">estate coffee</strong>, the day at Himani Heritage is shaped around the rhythms of the <strong className="font-semibold text-primary">hills</strong>. Wander the plantations at dawn, take a slow dip in the pool, and end the evening around the bonfire.
+                Wake to <strong className="font-semibold text-primary">mist over the mountains</strong>, take a slow dip in the <strong className="font-semibold text-primary">open-air pool</strong>, and end the night under one of the <strong className="font-semibold text-primary">clearest skies</strong> in Coorg — far from the city and its lights.
               </p>
             </div>
 
-            {/* Right column: three stacked cards, each reveals its dedicated image on hover */}
+            {/* Right column: three stacked cards, each shows its image with text, deepens on hover */}
             <div className="reveal-right space-y-3">
-              <HoverCard
-                title="Yoga & Wellness"
-                subtitle="Calm interiors"
-                image="/images/ambiance.webp"
-              />
-              <HoverCard
-                title="Swimming Pool"
-                subtitle="Open-air sunshine"
-                // TODO: replace with a real on-property pool photo
-                image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1000&q=80"
-              />
-              <HoverCard
-                title="Plantation Walks"
-                subtitle="Coffee & cardamom estates"
-                // TODO: replace with a real plantation/garden photo
-                image="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=1000&q=80"
-              />
+              {experiences.map((exp) => (
+                <HoverCard
+                  key={exp.title}
+                  title={exp.title}
+                  subtitle={exp.subtitle}
+                  image={exp.image}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -225,10 +219,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div className="reveal-left py-5">
               <Subtitle>Food &amp; Drink</Subtitle>
-              <h2>Coorgi flavours, served fresh from the kitchen</h2>
-              <p>Hearty Pandi curry, akki roti hot off the tava, kadambuttu, and pots of estate-roasted coffee — our kitchen serves home-style Coorg cuisine alongside familiar comfort food for younger guests and travellers.</p>
+              <h2>Home-style local food, all day</h2>
+              <p>Every package includes a complimentary breakfast, served from 8 to 10 each morning. Beyond that, our on-site kitchen and room service bring warm, home-style local cooking right to your table — no need to leave the mountains.</p>
               <div className="flex gap-4 flex-wrap items-center mt-2">
-                <Link to="/contact" className="btn btn-primary">Plan Your Meal</Link>
+                <a href={brand.whatsapp} target="_blank" rel="noreferrer" className="btn btn-primary">Enquire on WhatsApp</a>
                 <button
                   onClick={() => open('https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1')}
                   className="inline-flex items-center gap-3.5 text-primary text-[13px] font-semibold tracking-[1.5px] uppercase bg-transparent border-0 p-0 cursor-pointer"
@@ -258,11 +252,11 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container-x">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[30px]">
-            <Counter label="Rooms" value={8} desc="Intimate & boutique" delay="0s" />
-            <Counter label="Guest Rating" value={88} suffix="/100" desc="Across booking sites" delay="0.1s" />
+            <Counter label="Private Houses" value={9} desc="Across the grounds" delay="0s" />
+            <Counter label="Room Types" value={3} desc="1, 2 & 3 bedroom" delay="0.1s" />
             <Counter label="Reception" value={24} suffix="/7" desc="Always at your service" delay="0.2s" />
-            <Counter label="To Triveni Sangama" value={100} suffix="m" desc="Sacred confluence" delay="0.3s" />
-            <Counter label="To Abbi Falls" value={41} suffix="km" desc="A scenic day trip" delay="0.4s" />
+            <Counter label="To Madikeri" value={24} suffix="km" desc="Town centre" delay="0.3s" />
+            <Counter label="To Airport" value={106} suffix="km" desc="Kannur International" delay="0.4s" />
           </div>
         </div>
       </section>
@@ -272,7 +266,7 @@ export default function Home() {
         <div className="container-x">
           <div
             className="relative h-[380px] md:h-[420px] rounded-[20px] overflow-hidden bg-cover bg-center bg-scroll md:bg-fixed"
-            style={{ backgroundImage: "url('/images/hero.webp')" }}
+            style={{ backgroundImage: "url('/images/ambiance.webp')" }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
             <div className="relative z-[2] h-full flex items-center font-poppins px-7 md:px-12 lg:px-16">
@@ -287,12 +281,14 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex gap-3 flex-wrap md:flex-nowrap">
-                  <Link
-                    to="/contact"
-                    className="inline-block px-6 py-3 text-[13px] font-semibold rounded-full bg-white text-primary border-2 border-white transition-all duration-[400ms] ease-smooth hover:bg-transparent hover:text-white hover:-translate-y-0.5 whitespace-nowrap"
+                  <a
+                    href={brand.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-[13px] font-semibold rounded-full bg-white text-primary border-2 border-white transition-all duration-[400ms] ease-smooth hover:bg-transparent hover:text-white hover:-translate-y-0.5 whitespace-nowrap"
                   >
-                    Reserve now
-                  </Link>
+                    <i className="fab fa-whatsapp text-[15px]" /> Book on WhatsApp
+                  </a>
                   <Link
                     to="/rooms"
                     className="inline-block px-6 py-3 text-[13px] font-semibold rounded-full bg-transparent text-white border-2 border-white/80 transition-all duration-[400ms] ease-smooth hover:bg-white hover:text-primary hover:-translate-y-0.5 whitespace-nowrap"
@@ -369,22 +365,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* EXPLORE COORG (was Blog) */}
-      {/* <section className="section-pad bg-offwhite">
-        <div className="container-x">
-          <div className="reveal text-center max-w-[700px] mx-auto mb-[60px]">
-            <Subtitle>Explore Coorg</Subtitle>
-            <h2>Just beyond the gate</h2>
-            <p>Sacred rivers, misty viewpoints, and waterfalls — all within easy reach of the resort.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-            {blogPosts.map((post, i) => (
-              <BlogCard key={i} {...post} delay={`${i * 0.1}s`} />
-            ))}
-          </div>
-        </div>
-      </section> */}
 
     </>
   );

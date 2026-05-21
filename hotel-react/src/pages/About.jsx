@@ -36,11 +36,10 @@ export default function About() {
             </div>
             <div className="reveal-right py-5">
               <Subtitle>Our Story</Subtitle>
-              <h2>A small heritage retreat, run with care.</h2>
-              {/* TODO: confirm exact founding year */}
-              <p>Formerly known as Camp Nishani Holidays, Himani Heritage Resorts has welcomed travellers to the spice-scented hills of Coorg for more than a decade.</p>
-              <p>Reimagined as a heritage retreat, we blend the warmth of a small family-run inn with the comforts of a thoughtfully curated boutique stay. Eight rooms, attentive service, and a strong commitment to slow, local hospitality.</p>
-              <p>From your morning cup of plantation-grown coffee to the bonfire that closes each day, every detail is shaped by the rhythms of Bhagamandala and the people who call it home.</p>
+              <h2>Escape the pollution. Embrace pure nature.</h2>
+              <p>Formerly known as Camp Nishani Holidays, Himani Heritage Resorts is a tranquil mountain sanctuary tucked away in the serene Bhagamandala region of Madikeri, Coorg.</p>
+              <p>Surrounded by pristine landscapes, lush greenery, and rolling hills, the resort is a getaway for nature lovers, stargazers, and families seeking peace and complete privacy. Nine private ground-floor houses are spread across the property, each opening to mist-covered mountain views.</p>
+              <p>Far from city light pollution, our night skies stay exceptionally clear. With an open-air swimming pool, garden walking paths, and on-site dining, there's every reason to switch off and stay a while.</p>
               <div className="flex gap-4 flex-wrap">
                 <Link to="/rooms" className="btn btn-primary">View Rooms</Link>
                 <Link to="/contact" className="btn btn-outline">Get In Touch</Link>
@@ -55,7 +54,7 @@ export default function About() {
         <div className="container-x">
           <div className="reveal text-center max-w-[700px] mx-auto mb-[60px]">
             <Subtitle>Why Stay With Us</Subtitle>
-            <h2>A different kind of hill retreat</h2>
+            <h2>A different kind of mountain retreat</h2>
             <p>Three things make a stay at Himani Heritage feel particularly its own.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
@@ -87,10 +86,10 @@ export default function About() {
       <section className="py-20 bg-offwhite">
         <div className="container-x">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[30px]">
-            <Counter label="Rooms" value={8} desc="Boutique by design" delay="0s" />
-            <Counter label="Guest Rating" value={88} suffix="/100" desc="Across booking sites" delay="0.1s" />
-            <Counter label="To Triveni Sangama" value={100} suffix="m" desc="A short walk" delay="0.2s" />
-            <Counter label="To Madikeri" value={35} suffix="km" desc="Hill-town heritage" delay="0.3s" />
+            <Counter label="Private Houses" value={9} desc="Across the grounds" delay="0s" />
+            <Counter label="Room Types" value={3} desc="1, 2 & 3 bedroom" delay="0.1s" />
+            <Counter label="Swimming Pool" value={1} desc="Open-air, natural" delay="0.2s" />
+            <Counter label="To Madikeri" value={24} suffix="km" desc="Town centre" delay="0.3s" />
             <Counter label="Reception" value={24} suffix="/7" desc="Always available" delay="0.4s" />
           </div>
         </div>
@@ -99,9 +98,9 @@ export default function About() {
       <ParallaxCTA
         bgImage="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1920&q=80"
         subtitle="Reserve your stay"
-        title="Come slow down in the hills."
-        description="Eight rooms, a quiet garden, and the gentle hum of Bhagamandala just outside. Reserve your dates and we'll take care of the rest."
-        buttonLabel="Book Your Room"
+        title="Come switch off in the mountains."
+        description="Nine private houses, a quiet pool, and the clearest skies in Coorg. Tell us your dates and we'll take care of the rest."
+        buttonLabel="Plan Your Stay"
         buttonTo="/contact"
       />
     </>

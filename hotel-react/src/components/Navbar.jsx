@@ -60,18 +60,20 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right side: phone + social (desktop only) */}
-        <div className="hidden md:flex items-center gap-6">
-          {/* TODO: replace placeholder phone with real reservations number */}
-          <span className="text-white/85 text-sm font-medium">
+        {/* Right side: phone + WhatsApp book button (desktop only) */}
+        <div className="hidden md:flex items-center gap-5">
+          <a href={`tel:${brand.phoneRaw}`} className="text-white/85 text-sm font-medium hover:text-white transition-colors">
             <i className="fas fa-phone-alt text-accent mr-1.5" />
-            Reservations: {brand.phone}
-          </span>
-          <div className="flex gap-[14px]">
-            <a href="#" aria-label="Facebook" className="text-white/70 hover:text-accent transition-colors text-sm"><i className="fab fa-facebook-f" /></a>
-            <a href="#" aria-label="Instagram" className="text-white/70 hover:text-accent transition-colors text-sm"><i className="fab fa-instagram" /></a>
-            <a href="#" aria-label="WhatsApp" className="text-white/70 hover:text-accent transition-colors text-sm"><i className="fab fa-whatsapp" /></a>
-          </div>
+            {brand.phone}
+          </a>
+          <a
+            href={brand.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-white text-[13px] font-semibold transition-all duration-300 hover:bg-accent-warm hover:-translate-y-0.5"
+          >
+            <i className="fab fa-whatsapp text-[15px]" /> Book Now
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -108,6 +110,14 @@ export default function Navbar() {
             {l.label}
           </NavLink>
         ))}
+        <a
+          href={brand.whatsapp}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 px-[30px] py-4 text-[15px] font-semibold text-accent-warm"
+        >
+          <i className="fab fa-whatsapp text-[17px]" /> Book on WhatsApp
+        </a>
       </nav>
     </header>
   );

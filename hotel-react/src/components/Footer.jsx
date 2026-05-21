@@ -13,13 +13,16 @@ export default function Footer() {
             <p className="text-sm text-white/60 leading-[1.8] mb-[26px]">{brand.shortDesc}</p>
             <div className="flex gap-3 justify-center md:justify-start">
               {[
-                { icon: 'facebook-f', label: 'Facebook' },
-                { icon: 'instagram', label: 'Instagram' },
-                { icon: 'whatsapp', label: 'WhatsApp' },
-              ].map(({ icon, label }) => (
+                // TODO: add real Facebook / Instagram handles
+                { icon: 'whatsapp', label: 'WhatsApp', href: brand.whatsapp },
+                { icon: 'instagram', label: 'Instagram', href: '#' },
+                { icon: 'facebook-f', label: 'Facebook', href: '#' },
+              ].map(({ icon, label, href }) => (
                 <a
                   key={icon}
-                  href="#"
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noreferrer' : undefined}
                   aria-label={label}
                   className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/70 text-sm transition-all duration-300 hover:bg-accent hover:border-accent hover:text-white"
                 >
@@ -37,18 +40,21 @@ export default function Footer() {
           ]} />
 
           <FooterColumn title="Stay With Us" links={[
-            { to: '/rooms', label: 'Deluxe Queen' },
-            { to: '/rooms', label: 'Deluxe Double' },
-            { to: '/rooms', label: 'Deluxe Triple' },
-            { to: '/contact', label: 'Book a Room' },
+            { to: '/rooms', label: 'Deluxe Queen Room' },
+            { to: '/rooms', label: 'Deluxe Double Cottage' },
+            { to: '/rooms', label: 'Grand Family Villa' },
+            { to: '/rooms', label: 'Rooms & Packages' },
           ]} />
 
           <div>
             <h4 className="text-white text-lg mb-[26px]">Contact</h4>
-            {/* TODO: real contact details */}
             <ul className="space-y-[18px]">
-              <ContactLine icon="phone-alt">Reservations: {brand.phone}</ContactLine>
-              <ContactLine icon="envelope">{brand.email}</ContactLine>
+              <ContactLine icon="phone-alt">
+                <a href={`tel:${brand.phoneRaw}`} className="hover:text-accent transition-colors">{brand.phone}</a>
+              </ContactLine>
+              <ContactLine icon="whatsapp" brand>
+                <a href={brand.whatsapp} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">Book on WhatsApp</a>
+              </ContactLine>
               <ContactLine icon="map-marker-alt">
                 {brand.addressLine},<br />{brand.addressLine2}
               </ContactLine>
@@ -89,10 +95,10 @@ function FooterColumn({ title, links }) {
   );
 }
 
-function ContactLine({ icon, children }) {
+function ContactLine({ icon, brand: isBrand, children }) {
   return (
     <li className="flex flex-col sm:flex-row gap-2 sm:gap-[14px] text-sm text-white/60 leading-[1.6] items-center md:items-start justify-center md:justify-start">
-      <i className={`fas fa-${icon} text-accent text-[15px] mt-1 flex-shrink-0`} />
+      <i className={`${isBrand ? 'fab' : 'fas'} fa-${icon} text-accent text-[15px] mt-1 flex-shrink-0`} />
       <span>{children}</span>
     </li>
   );

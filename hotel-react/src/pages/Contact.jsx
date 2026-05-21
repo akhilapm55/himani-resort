@@ -7,6 +7,25 @@ const INPUT_CLS =
   'w-full px-[18px] py-[14px] border border-line rounded text-sm text-primary bg-white transition-colors duration-[400ms] focus:border-accent font-body';
 
 export default function Contact() {
+  // The enquiry form opens WhatsApp pre-filled with the guest's details,
+  // since booking is handled over WhatsApp.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const lines = [
+      "Hi Himani Heritage, I'd like to enquire about a stay.",
+      '',
+      `Name: ${f.guestName.value || '-'}`,
+      `Phone: ${f.guestPhone.value || '-'}`,
+      `Dates: ${f.guestDates.value || '-'}`,
+      `Guests: ${f.guestCount.value || '-'}`,
+      '',
+      f.guestMessage.value,
+    ];
+    const url = `https://wa.me/${brand.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`;
+    window.open(url, '_blank', 'noopener');
+  };
+
   return (
     <>
       <PageBanner
@@ -22,18 +41,43 @@ export default function Contact() {
             <div className="reveal-left lg:pr-5">
               <Subtitle>Get In Touch</Subtitle>
               <h2>Plan your stay with us.</h2>
-              <p>Send us a message with your dates and we'll be in touch the same day with availability, rates, and directions to the resort. We're happy to help arrange airport pickup or local tours as well.</p>
+              <p>
+                The fastest way to book is on WhatsApp — message us your dates and group size and we'll confirm
+                availability the same day. You can also call us or send the enquiry form across.
+              </p>
 
-              {/* TODO: replace placeholder contact details */}
+              {/* Prominent WhatsApp button */}
+              <a
+                href={brand.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2.5 mt-6 px-7 py-3.5 rounded-full bg-accent text-white text-[14px] font-semibold transition-all duration-300 hover:bg-accent-warm hover:-translate-y-0.5"
+              >
+                <i className="fab fa-whatsapp text-[18px]" /> Book on WhatsApp
+              </a>
+
               <div className="mt-10 space-y-7">
                 <InfoItem icon="map-marker-alt" title="Address">{brand.fullAddress}</InfoItem>
-                <InfoItem icon="phone-alt" title="Phone">Reservations: {brand.phone}</InfoItem>
-                <InfoItem icon="envelope" title="Email">{brand.email}</InfoItem>
-                <InfoItem icon="clock" title="Reception">24/7 — check-in 2:00 PM, check-out 12:00 PM</InfoItem>
+                <InfoItem icon="phone-alt" title="Phone / WhatsApp">
+                  <a href={`tel:${brand.phoneRaw}`} className="hover:text-accent transition-colors">{brand.phone}</a>
+                </InfoItem>
+                <InfoItem icon="clock" title="Reception">
+                  24/7 · Check-in 2:00 PM · Check-out 12:00 PM
+                </InfoItem>
               </div>
 
               <div className="flex gap-3.5 mt-10">
-                {['facebook-f', 'instagram', 'whatsapp', 'youtube'].map((icon) => (
+                <a
+                  href={brand.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
+                  className="w-[42px] h-[42px] rounded-full bg-offwhite text-accent flex items-center justify-center text-sm transition-all duration-[400ms] hover:bg-accent hover:text-white hover:-translate-y-1"
+                >
+                  <i className="fab fa-whatsapp" />
+                </a>
+                {/* TODO: add real Instagram / Facebook handles when available */}
+                {['instagram', 'facebook-f'].map((icon) => (
                   <a
                     key={icon}
                     href="#"
@@ -46,33 +90,36 @@ export default function Contact() {
               </div>
             </div>
 
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="reveal-right bg-white p-10 rounded-lg shadow-form"
-            >
+            <form onSubmit={handleSubmit} className="reveal-right bg-white p-10 rounded-lg shadow-form">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <FieldLabel label="Name">
-                  <input type="text" placeholder="Your full name" required className={INPUT_CLS} />
+                  <input name="guestName" type="text" placeholder="Your full name" required className={INPUT_CLS} />
                 </FieldLabel>
-                <FieldLabel label="Email">
-                  <input type="email" placeholder="you@email.com" required className={INPUT_CLS} />
+                <FieldLabel label="Phone">
+                  <input name="guestPhone" type="tel" placeholder="+91 00000 00000" required className={INPUT_CLS} />
                 </FieldLabel>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <FieldLabel label="Phone">
-                  <input type="tel" placeholder="+91 00000 00000" className={INPUT_CLS} />
-                </FieldLabel>
                 <FieldLabel label="Dates of Stay">
-                  <input type="text" placeholder="e.g. 14 – 17 June" className={INPUT_CLS} />
+                  <input name="guestDates" type="text" placeholder="e.g. 14 – 17 June" className={INPUT_CLS} />
+                </FieldLabel>
+                <FieldLabel label="No. of Guests">
+                  <input name="guestCount" type="text" placeholder="e.g. 2 adults, 1 child" className={INPUT_CLS} />
                 </FieldLabel>
               </div>
               <FieldLabel label="Message">
                 <textarea
-                  placeholder="Number of guests, room preference, anything else we should know..."
+                  name="guestMessage"
+                  placeholder="Room preference or anything else we should know..."
                   className={`${INPUT_CLS} min-h-[150px] resize-y`}
                 />
               </FieldLabel>
-              <button type="submit" className="btn btn-primary w-full">Send Enquiry</button>
+              <button type="submit" className="btn btn-primary w-full inline-flex items-center justify-center gap-2">
+                <i className="fab fa-whatsapp text-[16px]" /> Send via WhatsApp
+              </button>
+              <p className="text-[12px] text-muted text-center mt-3 m-0">
+                Opens WhatsApp with your details pre-filled — just hit send.
+              </p>
             </form>
           </div>
         </div>
@@ -82,7 +129,7 @@ export default function Contact() {
       <section className="w-full h-[450px] overflow-hidden">
         <iframe
           title="Himani Heritage Resorts — Bhagamandala, Coorg"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=75.55%2C12.37%2C75.66%2C12.45&amp;layer=mapnik&amp;marker=12.41%2C75.6"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=75.45%2C12.33%2C75.60%2C12.44&amp;layer=mapnik&amp;marker=12.383%2C75.517"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="w-full h-full border-0 bg-cream"
