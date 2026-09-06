@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"e:/design templates/himani_hotel/hotel-website/css\" \"e:/design templates/himani_hotel/hotel-website/js\" \"e:/design templates/himani_hotel/hotel-website/assets/images\" && ls \"e:/design templates/himani_hotel/hotel-website\")",
+      "WebSearch",
+      "WebFetch(domain:www.makemytrip.com)",
+      "WebFetch(domain:www.booking.com)"
+    ],
+    "additionalDirectories": [
+      "e:\\design templates\\himani_hotel\\hotel-website"
+    ]
+  }
+}

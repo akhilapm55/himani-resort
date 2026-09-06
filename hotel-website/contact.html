@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Himani Heritage Resorts, Bhagamandala</title>
+  <meta name="description" content="Reach out to Himani Heritage Resorts in Bhagamandala, Coorg. Phone, email, and directions to the resort." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">Himani<span>Heritage</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="nav-phone"><i class="fas fa-phone-alt"></i> Reservations: +91 XXXXX XXXXX</span>
+        <div class="nav-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1920&q=80');">
+      <div class="page-banner-content">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span class="separator">/</span><span>Contact</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT INFO + FORM -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="two-col">
+          <div class="contact-info reveal-left">
+            <span class="subtitle">Get In Touch</span>
+            <h2>Plan your stay with us.</h2>
+            <p>Send us a message with your dates and we'll be in touch the same day with availability, rates, and directions to the resort. We're happy to help arrange airport pickup or local tours as well.</p>
+
+            <!-- TODO: replace placeholder contact details with real ones -->
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <h4>Address</h4>
+                  <p>Himani Heritage Resorts, Bhagamandala, Coorg, Karnataka 571247</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>Reservations: +91 XXXXX XXXXX</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h4>Email</h4>
+                  <p>info@himaniheritage.com</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                  <h4>Reception</h4>
+                  <p>24/7 &mdash; check-in 2:00 PM, check-out 12:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal-right" onsubmit="event.preventDefault();">
+            <div class="form-row">
+              <div class="form-field">
+                <label>Name</label>
+                <input type="text" placeholder="Your full name" required />
+              </div>
+              <div class="form-field">
+                <label>Email</label>
+                <input type="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Phone</label>
+                <input type="tel" placeholder="+91 00000 00000" />
+              </div>
+              <div class="form-field">
+                <label>Dates of Stay</label>
+                <input type="text" placeholder="e.g. 14 &ndash; 17 June" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Message</label>
+              <textarea placeholder="Number of guests, room preference, anything else we should know..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP (Bhagamandala, Coorg) -->
+    <section class="map-section">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=75.55%2C12.37%2C75.66%2C12.45&amp;layer=mapnik&amp;marker=12.41%2C75.6"
+        title="Himani Heritage Resorts &mdash; Bhagamandala, Coorg"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-offwhite">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="subtitle">FAQ</span>
+          <h2>Frequently asked questions</h2>
+          <p>Quick answers to the things our guests ask most often before they arrive.</p>
+        </div>
+
+        <div class="accordion" style="max-width: 800px; margin: 0 auto;">
+          <div class="accordion-item active reveal" style="transition-delay: 0s;">
+            <div class="accordion-header">
+              <span>What are your check-in and check-out times?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Check-in is from 2:00 PM and check-out is by 12:00 PM. Early check-in or late check-out can be arranged subject to availability &mdash; just let our front desk know in advance.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item reveal" style="transition-delay: 0.05s;">
+            <div class="accordion-header">
+              <span>How do I reach Himani Heritage from the nearest airport?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Kannur International Airport is the closest, roughly 106 km away. Bengaluru's Kempegowda Airport is a longer but more frequent option. We're happy to arrange a private cab for you &mdash; just let us know in advance.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item reveal" style="transition-delay: 0.1s;">
+            <div class="accordion-header">
+              <span>Is parking available?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                Yes &mdash; free private parking is available on site for all guests. Just drive in; our team will help with luggage on arrival.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item reveal" style="transition-delay: 0.15s;">
+            <div class="accordion-header">
+              <span>What is the cancellation policy?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                <!-- TODO: confirm exact cancellation policy with management -->
+                Cancellation policies vary by season and the rate selected at booking. Please refer to your confirmation email or contact our front desk for specifics.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item reveal" style="transition-delay: 0.2s;">
+            <div class="accordion-header">
+              <span>What's the best time of year to visit Coorg?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-body-inner">
+                October through March is most popular &mdash; cool, dry, and clear. The monsoon (June&ndash;September) is dramatic and green if you don't mind a little rain, and the waterfalls are at their best.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">Himani<span>Heritage</span></a>
+          <p class="footer-desc">An eight-room heritage retreat in Bhagamandala, Coorg &mdash; where the mist of the Western Ghats meets warm Coorgi hospitality.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Main Menu</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay With Us</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Deluxe Queen</a></li>
+            <li><a href="rooms.html">Deluxe Double</a></li>
+            <li><a href="rooms.html">Deluxe Triple</a></li>
+            <li><a href="contact.html">Book a Room</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-phone-alt"></i><span>Reservations: +91 XXXXX XXXXX</span></li>
+            <li><i class="fas fa-envelope"></i><span>info@himaniheritage.com</span></li>
+            <li><i class="fas fa-map-marker-alt"></i><span>Bhagamandala,<br />Coorg, Karnataka 571247</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Himani Heritage Resorts. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script defer src="js/main.js"></script>
+</body>
+</html>
